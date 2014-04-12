@@ -29,7 +29,7 @@ static const char* pszBase58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnop
 inline std::string EncodeBase58(const unsigned char* pbegin, const unsigned char* pend)
 {
     CAutoBN_CTX pctx;
-    CBigNum bn58 = 48;
+    CBigNum bn58 = 58;
     CBigNum bn0 = 0;
 
     // Convert big endian data to little endian
@@ -78,7 +78,7 @@ inline bool DecodeBase58(const char* psz, std::vector<unsigned char>& vchRet)
 {
     CAutoBN_CTX pctx;
     vchRet.clear();
-    CBigNum bn58 = 48;
+    CBigNum bn58 = 58;
     CBigNum bn = 0;
     CBigNum bnChar;
     while (isspace(*psz))
